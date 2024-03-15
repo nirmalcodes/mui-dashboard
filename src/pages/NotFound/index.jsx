@@ -1,5 +1,5 @@
-import { Box, Typography } from '@mui/material';
-import React from 'react';
+import { Box, Button, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const NotFound = () => {
   return (
@@ -35,9 +35,14 @@ const NotFound = () => {
         <Typography align='center' variant='h1'>
           404
         </Typography>
-        <Typography align='center' variant='h5'>
+        <Typography align='center' variant='h5' mb={4}>
           The page you're looking for was not found.
         </Typography>
+        <Button variant='contained'>
+          <Link to={'/'} replace>
+            Back to Dashboard
+          </Link>
+        </Button>
       </Box>
     </Box>
   );
