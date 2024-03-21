@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { ColorModeContext } from '../../../theme';
 import { styled, useTheme } from '@mui/material/styles';
 import MuiAppBar from '@mui/material/AppBar';
@@ -48,7 +48,16 @@ const MAppbar = ({ open, onAction }) => {
   };
 
   return (
-    <AppBar position='fixed' open={open} color='inherit' elevation={0}>
+    <AppBar
+      position='fixed'
+      open={open}
+      color='inherit'
+      elevation={0}
+      sx={{
+        borderBottom: 1,
+        borderColor: 'divider',
+      }}
+    >
       <Toolbar>
         <IconButton
           color='inherit'
@@ -86,7 +95,7 @@ const MAppbar = ({ open, onAction }) => {
               >
                 <Avatar
                   alt='Nirmal'
-                  src='https://picsum.photos/800/800?random=1'
+                  src='https://picsum.photos/800/800?random=20'
                 />
               </IconButton>
             </Tooltip>

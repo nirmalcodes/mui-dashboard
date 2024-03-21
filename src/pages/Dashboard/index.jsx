@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Box, Card, Grid, Typography } from '@mui/material';
 import StatCard from '../../components/Cards/StatCard';
 import PaymentsOutlinedIcon from '@mui/icons-material/PaymentsOutlined';
@@ -84,14 +84,34 @@ const Dashboard = () => {
                           sx={{
                             p: 1,
                             borderRadius: 2,
-                            cursor: 'grab',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'flex-start',
+                            '&:hover': {
+                              cursor: 'grab',
+                            },
+                            '&:hover > .childBox': {
+                              opacity: 1,
+                            },
+                            transition: 'all 300ms ease-in-out',
                           }}
                         >
-                          <DragIndicatorIcon fontSize='small' />
                           <Typography>{task.name}</Typography>
+                          <Box
+                            className='childBox'
+                            sx={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              marginLeft: 'auto',
+                              opacity: 0,
+                              transition: 'opacity 300ms ease-in-out',
+                            }}
+                          >
+                            <DragIndicatorIcon
+                              fontSize='small'
+                              sx={{ opacity: 0.5 }}
+                            />
+                          </Box>
                         </Card>
                       </SortableListItem>
                     ))}

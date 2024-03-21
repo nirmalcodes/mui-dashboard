@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './SortableListItem.module.css';
 
 import { useSortable } from '@dnd-kit/sortable';

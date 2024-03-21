@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import { Suspense, lazy } from 'react';
 import Layout from './components/Layout';
 import { ThemeProvider } from '@mui/material';
 import { ColorModeContext, useMode } from './theme';
